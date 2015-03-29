@@ -1,0 +1,19 @@
+// Find Specific Kind of File
+find . -type f -name "*.txt"
+
+find . -type f -name "*.php"
+find . -type f -name "*.php."
+find . -type f -name "*.php5."
+find . -type f -name "*.php5"
+
+// Reboot
+sudo reboot now
+
+// Shutdown
+sudo shutdown -h now
+
+// File Permissions
+sudo chown -R serverpilot:serverpilot /srv/users/serverpilot/apps
+
+// Remove .DS_Store
+find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
