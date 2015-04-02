@@ -17,3 +17,9 @@ sudo chown -R serverpilot:serverpilot /srv/users/serverpilot/apps
 
 // Remove .DS_Store
 find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
+
+If you have committed junk but not pushed,
+git reset --soft HEAD~1
+
+This will create a new commit that reverses everything introduced by the accidental commit.
+git revert HEAD
