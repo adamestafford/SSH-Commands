@@ -18,8 +18,30 @@ sudo chown -R serverpilot:serverpilot /srv/users/serverpilot/apps
 // Remove .DS_Store
 find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
 
-If you have committed junk but not pushed,
+//If you have committed junk but not pushed,
 git reset --soft HEAD~1
 
-This will create a new commit that reverses everything introduced by the accidental commit.
+//This will create a new commit that reverses everything introduced by the accidental commit.
 git revert HEAD
+
+// List total lines of code in a repository
+git ls-files | xargs wc -l
+
+//To Add all 'modified' files and commit at the same time.
+git commit -a -m 'Commit message'
+
+//To Undo a commit and put committed files back in staging
+git reset --soft HEAD^
+
+//To unstage a file
+git reset HEAD filename
+
+//Blow away all changes since last commit
+git checkout -- filename
+
+//To add a file ( or files ) to the last commit
+git add filename
+git commit --amend -m 'new commit message'
+
+//Blow away the last commit entirely
+git reset --hard HEAD^
